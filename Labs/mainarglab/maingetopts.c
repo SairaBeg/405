@@ -36,6 +36,15 @@ struct Options get_opts(int count, char* args[]) {
             case 'f': 
                 opts.using_f = true; 
                 strcpy(opts.filename, optarg); 
+                if(strcmp(optarg,"error")==0){
+                 
+                    EXIT_FAILURE;
+                    exit(-1);
+                    break;
+                }else{
+                    EXIT_SUCCESS;
+                    break;
+                }
                 break;
             case ':': 
                 printf("-f needs a value\n");
